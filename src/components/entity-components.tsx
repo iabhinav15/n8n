@@ -123,7 +123,7 @@ export const EntitySearch = ({
 }: EntitySearchProps) => {
   return (
     <div className="relative ml-auto">
-      <SearchIcon className="size-3.5 absolute left-3 top1/2 -translate-y-1/2 text-muted-foreground" />
+      <SearchIcon className="size-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
       <Input
         className="max-w-[200px] bg-background shadow-none border border-border pl-8"
         placeholder={placeholder}
@@ -327,7 +327,10 @@ export const EntityItem = ({
                   align="end"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <DropdownMenuItem onClick={handleRemove}>
+                  <DropdownMenuItem
+                    onClick={handleRemove}
+                    className="bg-background cursor-pointer"
+                  >
                     <TrashIcon className="size-4" />
                     Delete
                   </DropdownMenuItem>
