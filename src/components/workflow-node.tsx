@@ -26,16 +26,12 @@ export const WorkflowNode = ({
     <>
       {showToolbar && (
         <NodeToolbar>
-          {onSettings && (
-            <Button size={"sm"} variant={"ghost"} onClick={onSettings}>
-              <SettingsIcon className="size-4" />
-            </Button>
-          )}
-          {onDelete && (
-            <Button size={"sm"} variant={"ghost"} onClick={onDelete}>
-              <TrashIcon className="size-4" />
-            </Button>
-          )}
+          <Button size={"sm"} variant={"ghost"} onClick={onSettings}>
+            <SettingsIcon className="size-4" />
+          </Button>
+          <Button size={"sm"} variant={"ghost"} onClick={onDelete}>
+            <TrashIcon className="size-4" />
+          </Button>
         </NodeToolbar>
       )}
       {children}
