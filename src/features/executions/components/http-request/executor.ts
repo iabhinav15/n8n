@@ -22,6 +22,7 @@ export const httpRequestExecutor: NodeExecutor<HttpRequestData> = async ({
   nodeId,
   context,
   step,
+  publish
 }) => {
   // Publish "loading" state for http trigger
 
