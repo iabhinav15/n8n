@@ -1,14 +1,10 @@
-import { realtime } from "inngest";
-import z from "zod";
+import { channel, topic } from "@inngest/realtime";
 
-export const httpRequestChannel = realtime.channel({
-  name: "http-request-execution",
-  topics: {
-    status: {
-      schema: z.object({
-        nodeId: z.string(),
-        status: z.enum(["loading", "success", "error"]),
-      }),
-    },
-  },
-});
+export const HTTP_REQUEST_CHANNEL_NAME = "http-request-execution";
+
+export const httpRequestChannel = channel(HTTP_REQUEST_CHANNEL_NAME).addTopic(
+  topic("status").type<{
+    nodeId: string;
+    status: "loading" | "success" | "error";
+  }>(),
+);
