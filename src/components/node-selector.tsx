@@ -34,6 +34,12 @@ const triggerNodes: NodeTypeOption[] = [
     description: "Triggers the workflow manually",
     icon: MousePointerIcon,
   },
+  {
+    type: NodeType.GOOGLE_FORM_TRIGGER,
+    label: "Google Form",
+    description: "Runs the flow when a google form is submitted",
+    icon: "/logos/googleform.svg",
+  },
 ];
 
 const executionNodes: NodeTypeOption[] = [
@@ -104,6 +110,8 @@ export const NodeSelector = ({
     },
     [setNodes, getNodes, screenToFlowPosition, onOpenChange],
   );
+
+
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
