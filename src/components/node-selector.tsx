@@ -55,6 +55,12 @@ const executionNodes: NodeTypeOption[] = [
     description: "Make an HTTP request",
     icon: GlobeIcon,
   },
+  {
+    type: NodeType.GEMINI,
+    label: "Gemini",
+    description: "Uses Google Gemini to generate text",
+    icon: "/logos/gemini.svg",
+  },
 ];
 
 interface NodeSelectorProps {
@@ -104,6 +110,7 @@ export const NodeSelector = ({
           position: flowPosition,
           data: {},
         };
+        console.log('newNode', newNode)
 
         if (hasInitialTirggerNode) {
           return [newNode];
@@ -116,8 +123,6 @@ export const NodeSelector = ({
     },
     [setNodes, getNodes, screenToFlowPosition, onOpenChange],
   );
-
-
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
